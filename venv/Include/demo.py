@@ -1,5 +1,5 @@
 from DBUtil import  DbBean
 o = DbBean()
-testdict = {"a":"1","b":"2"}
+testdict = {"procode":"2019-130522-34-03-000018"}
 
-o.add(testdict,"t_user")
+o.add(testdict,"t_pro")

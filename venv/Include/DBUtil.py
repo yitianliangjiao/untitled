@@ -42,7 +42,13 @@ class DbBean:
         sql = sql[:-1]
         sql += ") values ("
         for value in dbdict.values():
-          sql += value + ","
+          sql += "'"+value + "',"
         sql = sql[:-1]
         sql += ")"
+        db = pymysql.connect(self.db_host, self.db_user, self.db_pwd, self.db_name)
+        cursor = db.cursor()
         print(sql)
+        cursor.execute(sql)
+        db.commit()
+        cursor.close()
+        db.close()
