@@ -36,6 +36,7 @@ def setWallPaper(filepath):
     win32api.RegSetValueEx(k, "TileWallpaper", 0, win32con.REG_SZ, "0")
     win32gui.SystemParametersInfo(win32con.SPI_SETDESKWALLPAPER, filepath, 1 + 2)
 
+getfilefromurl(get_img_url())
 local = time.strftime("%Y.%m.%d")
 setWallPaper(imgpath % local)
 
