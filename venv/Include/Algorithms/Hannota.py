@@ -6,4 +6,4 @@ def hanoi(n, a, b, c):
         print(n, ':', a, '-->', c)
         hanoi(n - 1, b, a, c)
 # 调用
-hanoi(2, 'A', 'B', 'C')
+hanoi(3, 'A', 'B', 'C')
