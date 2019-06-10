@@ -1,7 +1,8 @@
 import requests
 import json
 
-longtime = 900
+maxtime = 900
+mintime = 300
 minnum = 3
 
 remoteUrl = "https://gongjiao.xiaojukeji.com/api/transit/line/location?from=webapp&wsgsig=dd03-NDQT5%2Fr2kA66DZ90c%2FW%2BBdYLWqx2052BadX1dFZKWqx1C1TID%2FNMAk%2F3n961CPUDgktBDUq2na94dwO80ln1Adk3nFIAf5YAcA7eehPKnAa6f5Ta"
@@ -18,7 +19,7 @@ buses = rjson.get("location")[0].get("buses")
 gbus = 0
 for index in range(len(buses)):
     bus = buses[index]
-    if(bus.get("time")>=0 and bus.get("time")<=longtime):
+    if(bus.get("time")>=0 and bus.get("time")<=maxtime and bus.get("time")>= mintime):
         gbus = gbus+1
         print(bus)
 if(gbus >= minnum):
